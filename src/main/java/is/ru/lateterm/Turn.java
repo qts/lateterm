@@ -22,10 +22,14 @@ public class Turn {
 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         //public static int add (String test){
          //       return 1;
         //}
 }
+=======
+}
+>>>>>>> 3cf3ea1333be3de83a50df96da2c147437c66f56
 =======
 }
 >>>>>>> 3cf3ea1333be3de83a50df96da2c147437c66f56
