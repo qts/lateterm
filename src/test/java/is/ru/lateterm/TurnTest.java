@@ -30,12 +30,4 @@ public class TurnTest {
         public void WhoseTurnTest6() {
                 assertEquals(1, Turn.WhoseTurn(1));
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3cf3ea1333be3de83a50df96da2c147437c66f56
-=======
-}
->>>>>>> 3cf3ea1333be3de83a50df96da2c147437c66f56
