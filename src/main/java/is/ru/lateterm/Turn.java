@@ -7,19 +7,17 @@ public class Turn {
         	if (turn_counter >= 1 && turn_counter <= 9){
         		if(turn_counter % 2 == 0)
        			{
-        			return 0;
+        			return 1; //Player turn
         		}
         		else
         		{
-        			return 1;
+        			return 0; //Computer turn
         		}
         	}
         	else
         	{
-        		return 2;
+        		return 2; //Error message / Error state
         	}
-
-
         }
 
         public static char UserPicks (int block_number)
