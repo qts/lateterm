@@ -21,4 +21,15 @@ public class Turn {
 
 
         }
+
+        public static char UserPicks (int block_number)
+        {
+            if (block_number >= 1 && block_number <= 9){
+                return 'X';
+            }
+            else
+            {
+                return '\0';
+            }
+        }
 }
