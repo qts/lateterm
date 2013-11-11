@@ -47,19 +47,19 @@ public class CheckWinTest {
 
         @Test
         public void CheckWinTestF1() {                                          
-               assertEquals(4, CheckWin.Line(1, 3, 6, 7, 8));
+               assertEquals(0, CheckWin.Line(1, 3, 6, 7, 8));
         } 
                 @Test
         public void CheckWinTestF2() {                                          
-               assertEquals(4, CheckWin.Line(2, 3, 4, 5, 9));
+               assertEquals(0, CheckWin.Line(2, 3, 4, 5, 9));
         } 
                 @Test
         public void CheckWinTestF3() {                                          
-               assertEquals(4, CheckWin.Line(2, 4, 6, 7, 9));
+               assertEquals(0, CheckWin.Line(2, 4, 6, 7, 9));
         } 
                 @Test
         public void CheckWinTestF4() {                                          
-               assertEquals(4, CheckWin.Line(1, 4, 6, 8, 9));
+               assertEquals(0, CheckWin.Line(1, 4, 6, 8, 9));
         } 
 
 }

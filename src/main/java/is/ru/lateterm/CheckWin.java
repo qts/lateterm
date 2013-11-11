@@ -16,42 +16,29 @@
 
             for (int n = 1; n <= 7;) 
             {    // 1, 2, 3 - 4, 5, 6 - 7, 8, 9               
-                if (board[n] != '\0' && board[n] == board[n + 1] && board[n + 1] == board[n + 1 + 1]) 
+                if (board[n] == 'X' && board[n] == board[n + 1] && board[n + 1] == board[n + 1 + 1]) 
                 {
-                    if (board[n] == 'X')
-                        return 1; //Player wins
-                    else
-                        return 0; //No winning combinations
-                            
+                    return 1; //Player wins                   
                 }
                 n = n + 3;
             }
 
             for (int n = 1; n <= 3; n++) 
             {   // 1, 4, 7 - 2, 5, 8 - 3, 6, 9
-                if (board[n] != '\0' && board[n] == board[n + 3] && board[n + 3] == board[n + 3 + 3]) 
+                if (board[n] == 'X' && board[n] == board[n + 3] && board[n + 3] == board[n + 3 + 3]) 
                 {
-                    if (board[n] == 'X')
-                        return 1; //Player wins
-                    else
-                        return 0; //No winning combinations                                              
-
-
+                    return 1; //Player wins                                          
                 }
             }
-            if (board[1] != '\0' && board[1] == board[5] && board[5] == board[9]) 
+            if (board[1] == 'X' && board[1] == board[5] && board[5] == board[9]) 
             {
-                if (board[1] == 'X')
                     return 1;
-                else
-                    return 0;
             }
-            if (board[3] != '\0' && board[3] == board[5] && board[5] == board[7]) {
-                if (board[3] == 'X')
+            if (board[3] == 'X' && board[3] == board[5] && board[5] == board[7]) 
+            {
                     return 1;
-                else
-                    return 0;
             }
-        return 4; //wat?
+
+        return 0; //No winning combinations 
     }
 }
