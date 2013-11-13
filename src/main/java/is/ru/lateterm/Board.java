@@ -6,8 +6,10 @@ public class Board
     static int max_turns;
     static int turn_counter;
 
-    // Initializes the board.
-    public static void Board()
+    // turn_counter verður inni í main, printboard þarf að taka það inn, og max_turns
+
+    // Constructor that initializes the board
+    public Board()
     {
     	max_turns = 9;
     	turn_counter = 0;
@@ -32,3 +34,5 @@ public class Board
     	return true;
     }
 }
+
+// GERA UPDATEBOARD........!
