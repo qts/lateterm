@@ -1,33 +1,37 @@
 package is.ru.lateterm;
 
-public class Turn {
-        
-        public static int WhoseTurn (int turn_counter)
-        {
-        	if (turn_counter >= 1 && turn_counter <= 9){
-        		if(turn_counter % 2 == 0)
-       			{
-        			return 0; //Computer turn
-        		}
-        		else
-        		{
-        			return 1; //Player turn
-        		}
-        	}
-        	else
-        	{
-        		return 2; //Error message / Error state
-        	}
-        }
+public class Turn 
+{
+    static int maxTurns;
+    static int currentTurn;
 
-        public static char UserPicks (int block_number)
+    public Turn()
+    {
+        maxTurns = 9;
+        currentTurn = 1;
+    }
+        
+    public static boolean whoseTurn()
+    {
+    	if (currentTurn >= 1 && currentTurn <= 9)
         {
-            if (block_number >= 1 && block_number <= 9){
-                return 'X';
-            }
-            else
-            {
-                return '\0';
-            }
+    		if (currentTurn % 2 == 0)
+   			{
+    			return false; //Computer turn
+    		}
+    		else
+    		{
+    			return true; //Player turn
+    		}
+    	}
+        else
+        {
+            return true; // kasta villu?..
         }
+    }
+
+    public static void incrementTurn()
+    {
+        currentTurn += 1;
+    }
 }
