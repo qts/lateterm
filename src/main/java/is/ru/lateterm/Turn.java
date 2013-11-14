@@ -34,4 +34,14 @@ public class Turn
     {
         currentTurn += 1;
     }
+
+    public static int getMaxTurns()
+    {
+        return maxTurns;
+    }
+
+    public static int getCurrentTurn()
+    {
+        return currentTurn;
+    }
 }
