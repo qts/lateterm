@@ -2,8 +2,8 @@ package is.ru.lateterm;
 
 public class Turn 
 {
-    static int maxTurns;
-    static int currentTurn;
+    public int maxTurns;
+    public int currentTurn;
 
     public Turn()
     {
@@ -11,7 +11,7 @@ public class Turn
         currentTurn = 1;
     }
         
-    public static boolean whoseTurn()
+    public boolean whoseTurn()
     {
     	if (currentTurn >= 1 && currentTurn <= 9)
         {
@@ -30,17 +30,17 @@ public class Turn
         }
     }
 
-    public static void incrementTurn()
+    public void incrementTurn()
     {
         currentTurn += 1;
     }
 
-    public static int getMaxTurns()
+    public int getMaxTurns()
     {
         return maxTurns;
     }
 
-    public static int getCurrentTurn()
+    public int getCurrentTurn()
     {
         return currentTurn;
     }

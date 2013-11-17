@@ -2,24 +2,27 @@ package is.ru.lateterm;
 
 public class Board
 {
-	static char board[]; 
-    Turn newTurn = new Turn(); // should this be here?..
+	char board[]; 
+    Turn newTurn; 
 
     // Constructor that initializes the board
     public Board()
     {
-    	board = new char[10];
+    	board = new char[9];
 
-    	for (int i = 0; i < newTurn.maxTurns + 1; i++)
+    	for (int i = 0; i < 9 ; i++) // LAGA!
     	{
     		board[i] = 0;
     	}
+
+        newTurn = new Turn();
+
     }
 
     // Checks is the board is in fact empty
-    public static boolean isEmpty()
+    public boolean isEmpty()
     {
-    	for (int i = 0; i < 10; i++)
+    	for (int i = 0; i < 9; i++)
     	{
     		if (board[i] != 0)
     		{
@@ -29,19 +32,25 @@ public class Board
     	return true;
     }
 
-    public static boolean isSpaceTaken(int placement)
+    public boolean isSpaceTaken(int placement)
     {
         return (board[placement-1] != 0);
+        // ef þetta er indeed EKKI jafnt og 0 (semsagt 
     }
     
 
-    public static void updateBoard(int placement, char playersSymbol)
+    public void updateBoard(int placement, char playersSymbol)
     {
+        int theTurn = newTurn.currentTurn;
+        int theMaxTurns = newTurn.maxTurns;
+
         if (placement >= 1 && placement <= 9)
         {
             if (isSpaceTaken(placement) == false)
             {
                 board[placement-1] = playersSymbol;
+
+                PrintZeBoard(theTurn, theMaxTurns);
             }
             else
             {
@@ -54,23 +63,20 @@ public class Board
         }
     }
 
-    /*
-    public static void PrintZeBoard()
+    
+    public void PrintZeBoard(int theTurn, int maxTurns)
     {
         System.out.println("");
 
-        int theTurn = newTurn.getCurrentTurn();
-        int theMaxTurns = newTurn.getMaxTurns();
-
-        boolean whoPlaysNext = newTurn.whoseTurn();
+        //boolean whoPlaysNext = newTurn.whoseTurn();
 
         System.out.println(theTurn + ". umferd");
 
         int col = 0;
 
-        for (int j = 1; j <= theMaxTurns; j++) 
+        for (int j = 1; j <= maxTurns; j++) 
         {
-            if (board[j] == '\0') 
+            if (board[j-1] == '\0') 
             {
                 System.out.print("   ");
                 col++;
@@ -85,7 +91,7 @@ public class Board
             else
                 System.out.print("|");
         }
-    }*/
+    }
 }
 
 // GERA UPDATEBOARD........!
