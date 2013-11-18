@@ -3,18 +3,9 @@ package is.ru.lateterm;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-//Inga hatar taco
-
 public class TestBoard
 {
 	Board myBoard = new Board();
-	Board myBoard2 = new Board();
-	Board myBoard3 = new Board();
-	Board myBoard4 = new Board();
-	Board myBoard5 = new Board();
-	Board myBoard6 = new Board();
-	Board myBoard7 = new Board();
-	Board myBoard8 = new Board();
 
 	@Test
 	public void testIsBoardEmpty()
@@ -32,61 +23,108 @@ public class TestBoard
 	@Test
 	public void testIsSpaceTakenWhenTheBoardIsSupposetlyEmpty()
 	{
-		assertEquals(false, myBoard2.isSpaceTaken(2));
+		assertEquals(false, myBoard.isSpaceTaken(2));
 	}
 
 	@Test 
 	public void testIsSpaceTakenAfterUpdateBoard()
 	{
-		myBoard2.updateBoard(3, 'B');
-		assertEquals(true, myBoard2.isSpaceTaken(3));
+		myBoard.updateBoard(3, 'B');
+		assertEquals(true, myBoard.isSpaceTaken(3));
 	}
 
 	@Test
 	public void testIfUpdateBoardInsertsWhenItShouldnt()
 	{
-		myBoard4.updateBoard(1337, 'X');
-		assertEquals(true, myBoard4.isEmpty());
+		myBoard.updateBoard(1337, 'X');
+		assertEquals(true, myBoard.isEmpty());
 	}
 
 	@Test
 	public void testIfUpdateBoardInsertsWhenItShouldnt2()
 	{
-		myBoard5.updateBoard( (-1337) , 'O');
-		assertEquals(true, myBoard5.isEmpty());
+		myBoard.updateBoard( (-1337) , 'O');
+		assertEquals(true, myBoard.isEmpty());
 	}
 
 	@Test
-	public void test1rowxxx()
+	public void testFullDR_357() //DR = Down Right \
 	{
-		myBoard6.updateBoard(1, 'X');
-		myBoard6.updateBoard(2, 'X');
-		myBoard6.updateBoard(3, 'X');
-		assertEquals(1, myBoard6.isWinner());
+		myBoard.updateBoard(1, 'X');
+		myBoard.updateBoard(2, 'X');
+		myBoard.updateBoard(3, 'O');
+		myBoard.updateBoard(4, 'X');
+		myBoard.updateBoard(5, 'O');
+		myBoard.updateBoard(6, 'X');
+		myBoard.updateBoard(7, 'O');
+		myBoard.updateBoard(8, 'O');
+		myBoard.updateBoard(9, 'X');
+		assertEquals(2, myBoard.isWinner());
 	}
 
 	@Test
-	public void test1rowxox()
+	public void testRow_123()
 	{
-		myBoard7.updateBoard(1, 'X');
-		myBoard7.updateBoard(2, 'o');
-		myBoard7.updateBoard(3, 'X');
-		assertEquals(3, myBoard7.isWinner());
+		myBoard.updateBoard(1, 'X');
+		myBoard.updateBoard(2, 'X');
+		myBoard.updateBoard(3, 'X');
+		assertEquals(1, myBoard.isWinner());
+	}
+
+		@Test
+	public void testCol_369()
+	{
+		myBoard.updateBoard(3, 'X');
+		myBoard.updateBoard(6, 'X');
+		myBoard.updateBoard(9, 'X');
+		assertEquals(1, myBoard.isWinner());
 	}
 
 	@Test
-	public void test1blaannad()
+	public void testDL_159() //DL = Down left /
 	{
-		myBoard8.updateBoard(1, 'X');
-		myBoard8.updateBoard(2, 'X');
-		myBoard8.updateBoard(3, 'O');
-		myBoard8.updateBoard(4, 'X');
-		myBoard8.updateBoard(5, 'O');
-		myBoard8.updateBoard(6, 'X');
-		myBoard8.updateBoard(7, 'O');
-		myBoard8.updateBoard(8, 'O');
-		myBoard8.updateBoard(9, 'X');
-		assertEquals(2, myBoard8.isWinner());
+		myBoard.updateBoard(1, 'O');
+		myBoard.updateBoard(5, 'O');
+		myBoard.updateBoard(9, 'O');
+		assertEquals(2, myBoard.isWinner());
+	}
+
+	@Test
+	public void testDR_357() //DR = Down right \
+	{
+		myBoard.updateBoard(3, 'X');
+		myBoard.updateBoard(5, 'X');
+		myBoard.updateBoard(7, 'X');
+		assertEquals(1, myBoard.isWinner());
+	}
+
+	@Test
+	public void testError1()
+	{
+		myBoard.updateBoard(1, 'X');
+		myBoard.updateBoard(2, 'o');
+		myBoard.updateBoard(3, 'X');
+		assertEquals(3, myBoard.isWinner());
+	}
+
+	@Test
+	public void testError2()
+	{
+		myBoard.updateBoard(1, 'X');
+		myBoard.updateBoard(2, 'x');
+		myBoard.updateBoard(3, 'X');
+		assertEquals(3, myBoard.isWinner());
+	}
+
+	@Test
+	public void testError3()
+	{
+		myBoard.updateBoard(1, 'O');
+		myBoard.updateBoard(1, 'X');
+		myBoard.updateBoard(5, 'X');
+		myBoard.updateBoard(5, 'O');
+		myBoard.updateBoard(9, 'X');
+		assertEquals(3, myBoard.isWinner());
 	}
 
 }
