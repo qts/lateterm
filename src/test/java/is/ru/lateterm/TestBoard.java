@@ -71,7 +71,16 @@ public class TestBoard
 		assertEquals(1, myBoard.isWinner());
 	}
 
-		@Test
+	@Test
+	public void testRow_789()
+	{
+		myBoard.updateBoard(7, 'O');
+		myBoard.updateBoard(8, 'O');
+		myBoard.updateBoard(9, 'O');
+		assertEquals(2, myBoard.isWinner());
+	}
+
+	@Test
 	public void testCol_369()
 	{
 		myBoard.updateBoard(3, 'X');
@@ -124,6 +133,15 @@ public class TestBoard
 		myBoard.updateBoard(5, 'X');
 		myBoard.updateBoard(5, 'O');
 		myBoard.updateBoard(9, 'X');
+		assertEquals(3, myBoard.isWinner());
+	}
+
+	@Test
+	public void testError4()
+	{
+		myBoard.updateBoard(0, 'X');
+		myBoard.updateBoard(1, 'X');
+		myBoard.updateBoard(2, 'X');
 		assertEquals(3, myBoard.isWinner());
 	}
 
