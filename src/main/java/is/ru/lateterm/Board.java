@@ -16,7 +16,6 @@ public class Board
     	}
 
         newTurn = new Turn();
-
     }
 
     // Checks is the board is in fact empty
@@ -63,6 +62,50 @@ public class Board
         }
     }
 
+    public int isWinner()
+    {
+        for (int n = 0; n < 9; n = n+3) 
+        {    // 1, 2, 3 - 4, 5, 6 - 7, 8, 9               
+            if (board[n] != '\0' && board[n] == board[n + 1] && board[n + 1] == board[n + 2]) 
+            {
+                if (board[n] == 'X')
+                    return 1; //Player wins
+                else if (board[n] == 'O')
+                    return 2; // Computer wins.                   
+            }
+        }
+
+        for (int n = 0; n < 3; n++) 
+        {   // 1, 4, 7 - 2, 5, 8 - 3, 6, 9
+            if (board[n] != '\0' && board[n] == board[n + 3] && board[n + 3] == board[n + 3 + 3]) 
+            {
+                if (board[n] == 'X')
+                    return 1; //Player wins
+                else if (board[n] == 'O')
+                    return 2; // Computer wins.                                             
+            }
+        }
+
+
+        if (board[0] != '\0' && board[0] == board[4] && board[4] == board[8]) 
+        {
+                if (board[0] == 'X')
+                    return 1; //Player wins
+                else if (board[0] == 'O')
+                    return 2; // Computer wins.   
+        }
+
+        if (board[2] != '\0' && board[2] == board[4] && board[4] == board[6]) 
+        {
+                if (board[2] == 'X')
+                    return 1; //Player wins
+                else if (board[2] == 'O')
+                    return 2; // Computer wins.   
+        }
+
+    return 3; //No winning combinations 
+}
+
     
     public void PrintZeBoard(int theTurn, int maxTurns)
     {
@@ -74,9 +117,9 @@ public class Board
 
         int col = 0;
 
-        for (int j = 1; j <= maxTurns; j++) 
+        for (int j = 0; j < maxTurns; j++) 
         {
-            if (board[j-1] == '\0') 
+            if (board[j] == '\0') 
             {
                 System.out.print("   ");
                 col++;
