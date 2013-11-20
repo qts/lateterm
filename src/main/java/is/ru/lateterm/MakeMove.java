@@ -1,57 +1,39 @@
 package is.ru.lateterm;
 
+import java.util.Scanner;
+import java.util.Random;
 
 public class MakeMove {
+		Board board = new Board();
+		
+        /*public boolean wrongInput(int a, boolean right_input) {
 
+             if(!a.hasNextInt()) {
+                      System.out.print("Vitlaust slegid inn, reyndu aftur: ");
+                          right_input = false;
+                          return false;
+                  }
+                  return true;
+         }*/
 
-        //  public boolean wrongInput(a, right_input) {
+        public boolean outOfRange(int a){
 
-        //      if(!a.hasNextInt()) {
-        //              System.out.print("Vitlaust slegid inn, reyndu aftur: ");
-        //                  right_input = false;
-        //                  return false;
-        //          }
-        //          return true;
-        // }
-
-        public boolean outOfRange(int a, boolean right_input){
-
-                    if (a < 0 || a > 9) {
-                            System.out.print("Talan sem thu slost inn er ekki rett, reyndu aftur, ");
-                            right_input = false;
-                            return false;
-                    } 
-                    return true;
+                    if (a < 1 || a > 9) 
+                        return true;       
+                    else
+                    	return false;
         }
-
-        // public boolean taken(int a, boolean right_input, Board board){
-
-        //         if (board.isSpaceTaken(a)) {
-        //                 System.out.println("Upptekinn reitur, reyndu aftur:");
-        //                 right_input = false;
-        //         } 
-        //         return true;
-        // }
-
-        // public boolean insert(a, right_input){
-
-        //         board.updateBoard(a, player);
-        //         right_input = true;
-        // }
-            
-
-
-        //  public boolean computerPlays(right_input){
-
-        //      while (right_input == false) {
-        //              Random ran = new Random();
-        //              int a = ran.nextInt(9) + 1;
-
-        //              if (board[a] != '\0') {
-        //                      right_input = false;
-        //              } else {
-        //                      board[a] = computer;
-        //                      right_input = true;
-        //              }
-        // }
+        
+        public int humanPlays(){
+            Scanner input = new Scanner(System.in);
+			int block = input.nextInt();		
+			return block;
+        }
+        
+        
+        public int computerPlays(){
+        	Random ran = new Random();
+        	int a = ran.nextInt(9) + 1;
+        	return a;
+        }
 }
