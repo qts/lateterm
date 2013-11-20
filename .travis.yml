@@ -3,3 +3,10 @@ jdk:
   - oraclejdk7
   - openjdk7
   - openjdk6
+
+  before_script:
+  - "export DISPLAY=:99.0"         # "Display" port
+  - "sh -e /etc/init.d/xvfb start" # Launch a "display" to run Selenium tests
+  - sleep 3                        # Give the "display" some time to start
+
+script: ./bin/testsuite

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+export PORT='9000'
+export TEST_URL='http://0.0.0.0:9000/'
+
+mvn -q clean
+mvn -q verify
