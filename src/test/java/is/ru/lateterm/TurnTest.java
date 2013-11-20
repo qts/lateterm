@@ -5,7 +5,6 @@ import org.junit.Test;
 
 public class TurnTest 
 {
-        // Til ad vera alveg safe geri eg nokkur tilvik af turn.
         Turn testTurn = new Turn();
 
         @Test
