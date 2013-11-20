@@ -1,5 +1,6 @@
 package is.ru.lateterm;
 
+
 public class Turn 
 {
     public int maxTurns;
@@ -11,22 +12,22 @@ public class Turn
         currentTurn = 1;
     }
         
-    public boolean whoseTurn()
+    public int whoseTurn()
     {
     	if (currentTurn >= 1 && currentTurn <= 9)
         {
-    		if (currentTurn % 2 == 0)
+    		if (currentTurn % 2 == 1)
    			{
-    			return false; //Computer turn
+    			return 1; //Player turn
     		}
     		else
     		{
-    			return true; //Player turn
+    			return 2; //Computer turn
     		}
     	}
         else
         {
-            return true; // kasta villu?..
+            return 3; // kasta villu?..
         }
     }
 
