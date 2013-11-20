@@ -29,7 +29,7 @@ public class TestBoard
 	@Test 
 	public void testIsSpaceTakenAfterUpdateBoard()
 	{
-		myBoard.updateBoard(3, 'B');
+		myBoard.updateBoard(3, 'X');
 		assertEquals(true, myBoard.isSpaceTaken(3));
 	}
 

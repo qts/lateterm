@@ -7,8 +7,6 @@ public class TurnTest
 {
         // Til ad vera alveg safe geri eg nokkur tilvik af turn.
         Turn testTurn = new Turn();
-        Turn testTurn2 = new Turn();
-        Turn testTurn3 = new Turn();
 
         @Test
         public void constructorTest()
@@ -32,14 +30,14 @@ public class TurnTest
         @Test
         public void playerTurnCheck()
         {
-                assertEquals(true, testTurn2.whoseTurn());
+                assertEquals(1, testTurn.whoseTurn());
         }
 
         @Test
         public void computerTurnCheck()
         {
-                testTurn2.incrementTurn();
-                assertEquals(false, testTurn2.whoseTurn());
+                testTurn.incrementTurn();
+                assertEquals(2, testTurn.whoseTurn());
         }
 
         @Test
@@ -47,9 +45,9 @@ public class TurnTest
         {
                 for (int i=0; i<11; i++)
                 {
-                        testTurn3.incrementTurn();
+                        testTurn.incrementTurn();
                 }
 
-                assertEquals(true, testTurn3.whoseTurn());
+                assertEquals(3, testTurn.whoseTurn());
         }
 }
