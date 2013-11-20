@@ -7,6 +7,8 @@ public class TestBoard
 {
 	Board myBoard = new Board();
 
+	//Testing 1, 2, 3
+
 	@Test
 	public void testIsBoardEmpty()
 	{
