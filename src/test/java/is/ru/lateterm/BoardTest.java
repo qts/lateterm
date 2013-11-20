@@ -3,7 +3,7 @@ package is.ru.lateterm;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class TestBoard
+public class BoardTest
 {
 	Board myBoard = new Board();
 

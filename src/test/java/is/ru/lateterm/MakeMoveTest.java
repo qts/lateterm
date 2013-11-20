@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import java.util.Scanner;
 
-public class TestMakeMove
+public class MakeMoveTest
 {
         MakeMove testmove = new MakeMove();
 
