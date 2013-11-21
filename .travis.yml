@@ -1,8 +1,5 @@
 language: java
-jdk:
-- oraclejdk7
-- openjdk7
-- openjdk6
+jdk: openjdk7
 deploy:
   provider: heroku
   api_key:
