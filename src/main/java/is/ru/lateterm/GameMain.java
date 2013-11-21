@@ -46,7 +46,7 @@ public class GameMain {
 						if(makeMove.outOfRange(hPlacement) == true)
 						{    	                	
 							right_input = false;
-							System.out.println("No a valid number, try again.");
+							System.out.println("Not a valid number, try again.");
 							break;
 
 						}
