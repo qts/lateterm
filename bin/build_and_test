@@ -4,5 +4,7 @@ mvn clean
 
 mvn package
 
+mvn test
+
 java -jar target/lateterm-1.0-SNAPSHOT-jar-with-dependencies.jar
 
