@@ -1,1 +1,1 @@
-web: java -cp target/classes/:"target/dependency/*" is.ru.lateterm.GameMain
+web: java -jar target/lateterm-1.0-SNAPSHOT-jar-with-dependencies.jar
