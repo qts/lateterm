@@ -7,7 +7,7 @@ import java.lang.System.*;
 
 public class GameMain {
 
-
+	//travis test
 	public static void main(String [] args) {
 
 		char ans;
