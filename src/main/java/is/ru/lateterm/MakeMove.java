@@ -26,14 +26,14 @@ public class MakeMove {
         
         public int humanPlays(){
             Scanner input = new Scanner(System.in);
-			int block = input.nextInt();		
-			return block;
+			      int block = input.nextLine();		
+			      return block;
         }
         
         
         public int computerPlays(){
         	Random ran = new Random();
-        	int a = ran.nextInt(9) + 1;
+        	int a = ran.nextLine(9) + 1;
         	return a;
         }
 }
