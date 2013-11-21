@@ -13,12 +13,10 @@ public class GameMain {
 
 		do{
 			boolean right_input = false;
-			//int turn_counter = 1;
 
 			Turn turn = new Turn();
 			Board board = new Board();
 			MakeMove makeMove = new MakeMove();
-			int wrongcount = 0;
 
 			System.out.println("A game of TicTacToe");
 
@@ -48,13 +46,6 @@ public class GameMain {
 						{    	                	
 							right_input = false;
 							System.out.println("Not a valid number, try again.");
-							wrongcount++;
-							if(wrongcount >= 6)
-							{
-								System.out.println("EXIT");
-								System.exit(0);
-
-							}
 							break;
 
 
