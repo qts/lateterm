@@ -1,4 +1,4 @@
 #!/bin/bash
 
-java -jar target/lateterm-1.0-SNAPSHOT-jar-with-dependencies.jar is.ru.lateterm.GameMain
+java -jar target/lateterm-1.0-SNAPSHOT-jar-with-dependencies.jar
 
