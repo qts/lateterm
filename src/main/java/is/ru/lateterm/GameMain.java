@@ -28,7 +28,7 @@ public class GameMain {
 			System.out.println("<html><head><title>A game of TicTacToe</html></head></title>");
 
 			System.out.println(" 1 | 2 | 3 ");
-			System.out.write("<td><button style=\"border: none; padding: 0 0 0 0\"  type=\"button\">"+
+			System.out.println("<td><button style=\"border: none; padding: 0 0 0 0\"  type=\"button\">"+
 		    "<img src=\"http://www.brics.dk/ixwt/X.gif\" alt=\"X\"></button></td>");
 			System.out.println(" 4 | 5 | 6 ");
 			System.out.println(" 7 | 8 | 9 ");
