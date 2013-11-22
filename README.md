@@ -1,14 +1,12 @@
 # Lateterm 
 
-## Greenqloud setup
+## Automatic continuous integration
 
+Builds are run using Travis.  Every time a commit is made into the repository,
+Travis makes Maven run all tests.
 
-## Selenium
+You can view past builds in the system at the `build system page`_.
 
-
-### Selenium tests
-
-#### Run the tests on the Greenqloud server
-
+.. _`build system page`: https://travis-ci.org/qts/lateterm
 
 
