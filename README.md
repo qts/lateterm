@@ -2,8 +2,6 @@
 
 ## Automatic continuous integration
 
-.. image:: https://api.travis-ci.org/qts/lateterm.png?branch=master
-
 Builds are run using Travis.  Every time a commit is made into the repository,
 Travis makes Maven run all tests.
 
