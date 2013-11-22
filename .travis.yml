@@ -3,7 +3,7 @@ jdk: openjdk7
 deploy:
   provider: heroku
   api_key:
-    secure: E8TIVmmRi1GplLbt722RjuMgBdobuivuqpTL1xnvTWXmBdz+WHWILtswvpwg4Sk5PtFOAKmcbetlBMBSHV6B5bbMyjByrzHH2jfLoleDjtrZyStEDdU5nzL2Ks4OuHIwohCzZbQ1QWpQaqGhY6x+eBSp0EuoK5+AgsVG+HgGDcQ=
+    secure: 9960c435-0d8d-40e9-b6d1-bf910c09106c
   app: mylla-staging
   on:
     repo: qts/lateterm
