@@ -11,6 +11,7 @@ import spark.*;
 public class GameMain {
 
 	public static void main(String [] args) {
+
         staticFileLocation("/public");
         
         setPort(Integer.valueOf(System.getenv("PORT")));
@@ -26,12 +27,11 @@ public class GameMain {
             @Override
             public Object handle(Request request, Response response) {
                 Integer a = Integer.valueOf(request.queryParams("a"));
-                Integer b = Integer.valueOf(request.queryParams("b"));
-                return a + b;
-            }
-        });
-		char ans;
 
+                
+      
+		char ans;
+		int hPlacement = a;
 		do{
 			boolean right_input = false;
 
@@ -54,15 +54,15 @@ public class GameMain {
 
 					while (right_input == false) {
 						System.out.println("Please choose a block");
-						int hPlacement = 0;
-						try{
-							hPlacement = makeMove.humanPlays();
-						}
-						catch(InputMismatchException exc) {
-							System.out.println("Not a number, try again.");
-									right_input = false;
-									break;   	                	
-						}
+						
+						//try{
+						//	hPlacement = makeMove.humanPlays();
+						//}
+						//catch(InputMismatchException exc) {
+						//	System.out.println("Not a number, try again.");
+						//			right_input = false;
+						//			break;   	                	
+						//}
 						if(makeMove.outOfRange(hPlacement) == true)
 						{    	                	
 							right_input = false;
@@ -130,6 +130,9 @@ public class GameMain {
 			ans = reader.next().charAt(0);
 		}while(ans == 'Y' || ans == 'y');
 		System.out.println("Game over!");
+		return "Winner!";
+		      }
+        });
 
 
 
