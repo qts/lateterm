@@ -26,8 +26,14 @@ public class MakeMove {
         
         public int humanPlays(){
             Scanner input = new Scanner(System.in);
-			int block = input.nextInt();		
-			return block;
+			      int block = 0;
+            if(input.hasNextInt() ){
+                block = input.nextInt();
+              }
+            else{
+                block = 0;
+                }	
+			      return block;
         }
         
         

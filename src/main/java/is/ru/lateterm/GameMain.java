@@ -5,6 +5,9 @@ import java.util.Scanner;
 import java.util.Random;
 import java.lang.System.*;
 
+import static spark.Spark.*;
+import spark.*;
+
 public class GameMain {
 
 	public static void main(String [] args) {
@@ -13,7 +16,6 @@ public class GameMain {
 
 		do{
 			boolean right_input = false;
-			//int turn_counter = 1;
 
 			Turn turn = new Turn();
 			Board board = new Board();
@@ -24,7 +26,6 @@ public class GameMain {
 			System.out.println(" 1 | 2 | 3 ");
 			System.out.println(" 4 | 5 | 6 ");
 			System.out.println(" 7 | 8 | 9 ");
-
 
 			while(turn.getCurrentTurn() <= turn.getMaxTurns())
 			{
@@ -46,8 +47,9 @@ public class GameMain {
 						if(makeMove.outOfRange(hPlacement) == true)
 						{    	                	
 							right_input = false;
-							System.out.println("No a valid number, try again.");
+							System.out.println("Not a valid number, try again.");
 							break;
+
 
 						}
 						if(board.isSpaceTaken(hPlacement) == true)
