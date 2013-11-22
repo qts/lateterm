@@ -8,35 +8,30 @@ public class MakeMoveTest
 {
         MakeMove testmove = new MakeMove();
 
-
-        // @Test
-        // public void testTaken()
-        // {
-        //         int rett = 2;
-        //         assertEquals
-        // }
-
         @Test
         public void testoutOfRange()
         {
-                int vitlaust = 10;
-                assertEquals(true, testmove.outOfRange(vitlaust));
+                int tooBig = 10;
+                assertEquals(true, testmove.outOfRange(tooBig));
         }
 
         @Test
         public void testoutOfRange2()
         {
-                int rett = 9;
-                assertEquals(false, testmove.outOfRange(rett));
+                int justRight = 9;
+                assertEquals(false, testmove.outOfRange(justRight));
         }
 
-        //@Test
-        //public void charInsteadOfInt()
-        //{
-                //ByteArrayInputStream test = new ByteArrayInputStream("2".getBytes());
-                //System.setIn(test);
-                //assertEquals(true, testmove.wrongInput(test, false));
-        //}
+        @Test
+        public void testoutOfRange3()
+        {
+                int tooSmall = -1337;
+                assertEquals(true, testmove.outOfRange(tooSmall));
+        }
 
-
+        @Test
+        public void testcomputerPlays()
+        {
+                assertEquals(true, testmove.computerPlays() < 10 && testmove.computerPlays() > 0);
+        }
 }

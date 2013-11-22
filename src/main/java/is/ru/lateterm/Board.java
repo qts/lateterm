@@ -19,6 +19,14 @@ public class Board
         newTurn = new Turn();
     }
 
+    public void greet()
+    {
+        System.out.println("A game of TicTacToe");
+        System.out.println(" 1 | 2 | 3 ");
+        System.out.println(" 4 | 5 | 6 ");
+        System.out.println(" 7 | 8 | 9 ");   
+    }
+
     // Checks is the board is in fact empty
     public boolean isEmpty()
     {
