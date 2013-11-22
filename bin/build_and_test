@@ -6,5 +6,9 @@ mvn package
 
 mvn test
 
+mvn checkstyle:checkstyle
+
+mvn clean test
+
 java -jar target/lateterm-1.0-SNAPSHOT-jar-with-dependencies.jar
 
