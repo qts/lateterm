@@ -1,3 +1,6 @@
 lateterm
 ========
-Parteh.
+Parteh. 
+
+Prerequisites
+=============
