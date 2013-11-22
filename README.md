@@ -1,13 +1,21 @@
 # Lateterm 
+##Develoment manual
+
+##Administration manual                       
+
+Test 12,3
 
 ## Automatic continuous integration
 
-Builds are run using Travis.  Every time a commit is made into the repository,
-Travis makes Maven run all tests.
+The following is a list of notes regarding the examples in this directory.
 
-You can view past builds in the system at the `build system page`.
+## General Requirements
 
-`build system page`: 
+You'll need a few additional gems
+
+hehehe
+hahaha
+
 
 
 
