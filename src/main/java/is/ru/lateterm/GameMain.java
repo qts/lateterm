@@ -14,18 +14,13 @@ public class GameMain {
 
 		char ans;
 
-		do{
+		do
+		{
 			boolean right_input = false;
-
 			Turn turn = new Turn();
 			Board board = new Board();
 			MakeMove makeMove = new MakeMove();
-
-			System.out.println("A game of TicTacToe");
-
-			System.out.println(" 1 | 2 | 3 ");
-			System.out.println(" 4 | 5 | 6 ");
-			System.out.println(" 7 | 8 | 9 ");
+			board.greet();
 
 			while(turn.getCurrentTurn() <= turn.getMaxTurns())
 			{
@@ -33,13 +28,25 @@ public class GameMain {
 				{            	
 					right_input = false;
 
-					while (right_input == false) {
+					while (right_input == false) 
+					{
 						System.out.println("Please choose a block");
+						Scanner input;
 						int hPlacement = 0;
-						try{
-							hPlacement = makeMove.humanPlays();
+						try
+						{
+							input = new Scanner(System.in);
+							if (input.hasNextInt())
+							{
+								hPlacement = input.nextInt();
+							}
+							else
+							{
+								hPlacement = 0;
+							}
 						}
-						catch(InputMismatchException exc) {
+						catch(InputMismatchException exc) 
+						{
 							System.out.println("Not a number, try again.");
 									right_input = false;
 									break;   	                	
@@ -71,15 +78,10 @@ public class GameMain {
 				{
 					right_input = false;
 
-					while (right_input == false) {
+					while (right_input == false) 
+					{
 						int cPlacement = makeMove.computerPlays();
-						if(board.isSpaceTaken(5) != true) //reynir ad setja i midjuna i byrjun.
-						{
-							board.updateBoard(5, 'O');
-							turn.incrementTurn();
-							right_input = true;
-						}
-						else if(board.isSpaceTaken(cPlacement) != true)
+						if(board.isSpaceTaken(cPlacement) != true)
 						{
 							board.updateBoard(cPlacement, 'O');
 							turn.incrementTurn();
@@ -109,10 +111,8 @@ public class GameMain {
 			System.out.println("Play again? Y/N");
 			Scanner reader = new Scanner(System.in);
 			ans = reader.next().charAt(0);
-		}while(ans == 'Y' || ans == 'y');
+		}
+		while(ans == 'Y' || ans == 'y');
 		System.out.println("Game over!");
-
-
-
 	}
 }
