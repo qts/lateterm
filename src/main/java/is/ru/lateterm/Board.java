@@ -6,7 +6,9 @@ public class Board
     Turn newTurn;
     MakeMove makeMove;
 
-    // Constructor that initializes the board
+    /*
+     * Constructor that initializes the board
+     */
     public Board()
     {
         board = new char[9];
@@ -19,6 +21,9 @@ public class Board
         newTurn = new Turn();
     }
 
+    /*
+     * Prints out a greeting
+     */
     public void greet()
     {
         System.out.println("A game of TicTacToe");
@@ -27,7 +32,9 @@ public class Board
         System.out.println(" 7 | 8 | 9 ");   
     }
 
-    // Checks is the board is in fact empty
+    /*
+     * Returns true if the board is empty
+     */
     public boolean isEmpty()
     {
         for (int i = 0; i < 9; i++)
@@ -40,80 +47,104 @@ public class Board
         return true;
     }
 
+    /*
+     * Returns true if a specific space is taken
+     */
     public boolean isSpaceTaken(int placement)
     {
-        if (board[placement-1] != 0)
-            return true;                
-        else
-            return false;
-        // Check that its NOT empty
+        if (board[placement - 1] != 0)
+        {
+            return true;
+        }
+        return false;
     }
-    
 
+    /*
+     * Checks if the block chosen is available then takes in the variable placement
+     * and symbol, updates the board with the new information - betra ord and prints the new board
+     */
     public void updateBoard(int placement, char playersSymbol)
     {
         int theTurn = newTurn.getCurrentTurn();
         int theMaxTurns = newTurn.getMaxTurns();
         
-        if (placement >= 1 && placement <= 9){
-        board[placement-1] = playersSymbol;
-        newTurn.incrementTurn();
+        if (placement >= 1 && placement <= 9)
+        {
+            board[placement - 1] = playersSymbol;
+            newTurn.incrementTurn();
         
-        PrintZeBoard(theTurn, theMaxTurns);
+            PrintZeBoard(theTurn, theMaxTurns);
         }
     }
 
+    /*
+     * Checks who is the winner by comparing blocks and symbols on the board returns
+     * 1 if the human player wins, 2 if the computer wins and 3 if it is a tie
+     */
     public int isWinner()
     {
         for (int n = 0; n < 9; n = n+3) 
-        {    // 1, 2, 3 - 4, 5, 6 - 7, 8, 9               
+        {
             if (board[n] != 0 && board[n] == board[n + 1] && board[n + 1] == board[n + 1 + 1]) 
             {
                 if (board[n] == 'X')
-                    return 1; //Player wins
+                {
+                    return 1;
+                }
                 else if (board[n] == 'O')
-                    return 2; // Computer wins                   
+                {
+                    return 2;
+                }
             }
         }
 
         for (int n = 0; n < 3; n++) 
-        {   // 1, 4, 7 - 2, 5, 8 - 3, 6, 9
+        {
             if (board[n] != 0 && board[n] == board[n + 3] && board[n + 3] == board[n + 3 + 3]) 
             {
                 if (board[n] == 'X')
-                    return 1; //Player wins
+                {
+                    return 1;
+                }
                 else if (board[n] == 'O')
-                    return 2; // Computer wins                                           
+                {
+                    return 2;
+                }
             }
         }
 
-
         if (board[0] != 0 && board[0] == board[4] && board[4] == board[8]) 
         {
-                if (board[0] == 'X')
-                    return 1; //Player wins
-                else if (board[0] == 'O')
-                    return 2; // Computer wins   
+            if (board[0] == 'X')
+            {
+                return 1;
+            }
+            else if (board[0] == 'O')
+            {
+                return 2;
+            }
         }
 
         if (board[2] != 0 && board[2] == board[4] && board[4] == board[6]) 
         {
-                if (board[2] == 'X')
-                    return 1; //Player wins
-                else if (board[2] == 'O')
-                    return 2; // Computer wins   
+            if (board[2] == 'X')
+            {
+                return 1;
+            }
+            else if (board[2] == 'O')
+            {
+                return 2;
+            }
         }
+        return 3;
+    }
 
-    return 3; //No winning combinations 
-}
-
-    
+    /*
+     * Prints the board
+     */
     public void PrintZeBoard(int theTurn, int maxTurns)
     {
         System.out.println("");
-
-        //boolean whoPlaysNext = newTurn.whoseTurn();
-
         System.out.println(theTurn + ". round");
 
         int col = 0;
@@ -131,9 +162,13 @@ public class Board
                 col++;
             }
             if (col == 3 || col == 6 || col == 9)
+            {
                 System.out.println("");
+            }
             else
+            {
                 System.out.print("|");
+            }
         }
     }
 }

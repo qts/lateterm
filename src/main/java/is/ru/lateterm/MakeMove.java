@@ -5,22 +5,27 @@ import java.util.Random;
 
 public class MakeMove 
 {
-		Board board = new Board();
+	Board board = new Board();
 
-        public boolean outOfRange(int a)
+    /*
+     * Return true if input is not from 1-9
+     */
+    public boolean outOfRange(int a)
+    {
+        if (a < 1 || a > 9)
         {
-
-                    if (a < 1 || a > 9) 
-                        return true;       
-                    else
-                    	return false;
+            return true;
         }
-        
-        
-        public int computerPlays()
-        {
-        	Random ran = new Random();
-        	int a = ran.nextInt(9) + 1;
-        	return a;
-        }
+    	return false;
+    }
+    
+    /*
+     * The computer placement is chosen at random???
+     */
+    public int computerPlays()
+    {
+    	Random ran = new Random();
+    	int a = ran.nextInt(9) + 1;
+    	return a;
+    }
 }

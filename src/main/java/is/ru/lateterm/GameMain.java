@@ -8,12 +8,16 @@ import java.lang.System.*;
 import static spark.Spark.*;
 import spark.*;
 
-public class GameMain {
-
-	public static void main(String [] args) {
-
+public class GameMain
+{
+	public static void main(String [] args)
+	{
 		char ans;
 
+		/*
+		 * do-while loop that continues until the player does not want
+		 * to play anymore
+		 */
 		do
 		{
 			boolean right_input = false;
@@ -22,12 +26,18 @@ public class GameMain {
 			MakeMove makeMove = new MakeMove();
 			board.greet();
 
+			/*
+			 * Continues while the game is not finished
+			 */
 			while(turn.getCurrentTurn() <= turn.getMaxTurns())
 			{
 				if(turn.whoseTurn() == 1)
 				{            	
 					right_input = false;
 
+					/*
+					 * When the player chooses a wrong input
+					 */
 					while (right_input == false) 
 					{
 						System.out.println("Please choose a block");
@@ -48,16 +58,14 @@ public class GameMain {
 						catch(InputMismatchException exc) 
 						{
 							System.out.println("Not a number, try again.");
-									right_input = false;
-									break;   	                	
+							right_input = false;
+							break;
 						}
 						if(makeMove.outOfRange(hPlacement) == true)
-						{    	                	
+						{
 							right_input = false;
 							System.out.println("Not a valid number, try again.");
 							break;
-
-
 						}
 						if(board.isSpaceTaken(hPlacement) == true)
 						{
@@ -70,22 +78,20 @@ public class GameMain {
 							turn.incrementTurn();
 							right_input = true;
 						}
-
 					}
 				}
-
 				else if(turn.whoseTurn() == 2)
 				{
 					right_input = false;
 
-					while (right_input == false) 
+					while (right_input == false)
 					{
 						int cPlacement = makeMove.computerPlays();
 						if(board.isSpaceTaken(cPlacement) != true)
 						{
 							board.updateBoard(cPlacement, 'O');
 							turn.incrementTurn();
-							right_input = true;				
+							right_input = true;
 						}
 					}
 				}
@@ -93,20 +99,17 @@ public class GameMain {
 				{
 					System.out.println("Congratulations! You won!");
 					break;
-
 				}
 				else if(board.isWinner() == 2)
 				{
 					System.out.println("The computer is the winner, better luck next time.");
 					break;
-
 				}
 				else if(turn.getCurrentTurn() == turn.getMaxTurns()+1)
 				{
 					System.out.println("A tie!");
 					break;
 				}
-
 			}
 			System.out.println("Play again? Y/N");
 			Scanner reader = new Scanner(System.in);
