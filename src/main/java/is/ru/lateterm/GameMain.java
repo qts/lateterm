@@ -8,10 +8,6 @@ import java.lang.System.*;
 import static spark.Spark.*;
 import spark.*;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-
 public class GameMain {
 
 	public static void main(String [] args) {
@@ -25,14 +21,11 @@ public class GameMain {
 			Board board = new Board();
 			MakeMove makeMove = new MakeMove();
 
-			System.out.println("<html><head><title>A game of TicTacToe</html></head></title>");
+			System.out.println("A game of TicTacToe");
 
 			System.out.println(" 1 | 2 | 3 ");
-			System.out.println("<td><button style=\"border: none; padding: 0 0 0 0\"  type=\"button\">"+
-		    "<img src=\"http://www.brics.dk/ixwt/X.gif\" alt=\"X\"></button></td>");
 			System.out.println(" 4 | 5 | 6 ");
 			System.out.println(" 7 | 8 | 9 ");
-
 
 			while(turn.getCurrentTurn() <= turn.getMaxTurns())
 			{
