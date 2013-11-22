@@ -8,30 +8,16 @@ import java.lang.System.*;
 import static spark.Spark.*;
 import spark.*;
 
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
 public class GameMain {
 
 	public static void main(String [] args) {
 
-        staticFileLocation("/public");
-        
-        setPort(Integer.valueOf(System.getenv("PORT")));
-
-        get(new Route("/hello") {
-            @Override
-            public Object handle(Request request, Response response) {
-                return "Hello World!";
-            }
-        });
-        
-        post(new Route("/add") {
-            @Override
-            public Object handle(Request request, Response response) {
-                Integer a = Integer.valueOf(request.queryParams("a"));
-
-                
-      
 		char ans;
-		int hPlacement = a;
+
 		do{
 			boolean right_input = false;
 
@@ -39,9 +25,11 @@ public class GameMain {
 			Board board = new Board();
 			MakeMove makeMove = new MakeMove();
 
-			System.out.println("A game of TicTacToe");
+			out.println("<html><head><title>A game of TicTacToe</html></head></title>");
 
-			System.out.println(" 1 | 2 | 3 ");
+			out.println(" 1 | 2 | 3 ");
+			out.write("<td><button style=\"border: none; padding: 0 0 0 0\"  type=\"button\">"+
+		    "<img src=\"http://www.brics.dk/ixwt/X.gif\" alt=\"X\"></button></td>");
 			System.out.println(" 4 | 5 | 6 ");
 			System.out.println(" 7 | 8 | 9 ");
 
@@ -54,15 +42,15 @@ public class GameMain {
 
 					while (right_input == false) {
 						System.out.println("Please choose a block");
-						
-						//try{
-						//	hPlacement = makeMove.humanPlays();
-						//}
-						//catch(InputMismatchException exc) {
-						//	System.out.println("Not a number, try again.");
-						//			right_input = false;
-						//			break;   	                	
-						//}
+						int hPlacement = 0;
+						try{
+							hPlacement = makeMove.humanPlays();
+						}
+						catch(InputMismatchException exc) {
+							System.out.println("Not a number, try again.");
+									right_input = false;
+									break;   	                	
+						}
 						if(makeMove.outOfRange(hPlacement) == true)
 						{    	                	
 							right_input = false;
@@ -130,9 +118,6 @@ public class GameMain {
 			ans = reader.next().charAt(0);
 		}while(ans == 'Y' || ans == 'y');
 		System.out.println("Game over!");
-		return "Winner!";
-		      }
-        });
 
 
 
