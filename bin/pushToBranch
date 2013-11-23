@@ -1,8 +1,4 @@
- git checkout deploy
- git merge origin/master
-
-  #git init
-  #git add .
-  #git commit -m "Succesful build from Rabison Travis"
-  #git remote set-url origin https://github.com/qts/lateterm.git
-  #git push origin HEAD:deploy
+git add .
+git commit -m "Succesful build from Rabison Travis"
+git remote set-url origin https://github.com/qts/lateterm.git
+git push origin HEAD:deploy
