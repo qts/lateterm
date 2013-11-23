@@ -31,7 +31,7 @@ public class GameMain {
                     /*
                      * When the player chooses a wrong input
                      */
-                    while (rightInput == false) {
+                    while (!rightInput) {
                         System.out.println("Please choose a block");
                         Scanner input;
                         int hPlacement = 0;
@@ -47,12 +47,12 @@ public class GameMain {
                             rightInput = false;
                             break;
                         }
-                        if (makeMove.outOfRange(hPlacement) == true) {
+                        if (makeMove.outOfRange(hPlacement)) {
                             rightInput = false;
                             System.out.println("Not a valid number, try again.");
                             break;
                         }
-                        if (board.isSpaceTaken(hPlacement) == true) {
+                        if (board.isSpaceTaken(hPlacement)) {
                             rightInput = false;
                             System.out.println("Space take, try again.");
                         } else {
@@ -64,9 +64,9 @@ public class GameMain {
                 } else if (turn.whoseTurn() == 2) {
                     rightInput = false;
 
-                    while (rightInput == false) {
+                    while (!rightInput) {
                         int cPlacement = makeMove.computerPlays();
-                        if (board.isSpaceTaken(cPlacement) != true) {
+                        if (!board.isSpaceTaken(cPlacement)) {
                             board.updateBoard(cPlacement, 'O');
                             turn.incrementTurn();
                             rightInput = true;
