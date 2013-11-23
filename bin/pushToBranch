@@ -1,4 +1,7 @@
-git add .
-git commit -m "Succesful build from Rabison Travis"
-git remote set-url origin https://github.com/qts/lateterm.git
-git push origin HEAD:deploy
+  git config --global user.email "einaralex@gmail.com"
+  git config --global user.name "einaralex"
+  git config credential.helper "store --file=.git/credentials"
+  git add .
+  git commit -m "Succesful build from Rabison Travis"
+  git remote set-url origin https://github.com/qts/lateterm.git
+  git push origin HEAD:deploy
