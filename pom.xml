@@ -23,6 +23,21 @@
     <scope>test</scope>
   </dependency>
 
+  <!-- Selenium requirements -->
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>2.37.1</version>
+  </dependency>
+  <!-- Selenium server requirements - needed to run tests 
+    without connecting to another server -->
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-server</artifactId>
+    <version>2.37.1</version>
+  </dependency>
+</dependencies>
+
 <build>
   <plugins>
     
