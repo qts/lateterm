@@ -1,6 +1,5 @@
 language: java
 jdk: openjdk7
-secure: "Pcc8ZuPrFzq7bilC+wy20TPx5soKI4EDQU4oc3NR6KPPfp2/u0gdtzydCOQ1fKZDwm5Aycc42+hXPSQLL/C2xAB6Yn28BeiNnBxiw9XX5NrWnHurwFAE+NP1HOpgro/XM4X1kKj+ACZDojpV1qOjAopMhQWZcymYP7bl3aEdzfI="
 deploy:
   provider: heroku
   api_key:
@@ -8,5 +7,7 @@ deploy:
   app: mylla-staging
   on:
     repo: qts/lateterm
-
 script: bin/pushToBranch
+env:
+  global:
+    secure: ifoTlGATG98il4vRnyupI9qtK8Yr8aqK2d3d7zBmxhCj7yU5OwEV53AJfyKZrhBM/nj4Oo9TbuGPmln7OyhuD3JnL9/UuA3RMK2itav2x1nR05eVVGvKAz10kvK65nXPQlO+GMHwkT9QtnAbO0ZxKBIQEkEi6MzKrdkd+4YCtzY=
