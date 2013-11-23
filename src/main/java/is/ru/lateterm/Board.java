@@ -11,7 +11,7 @@ public class Board {
     public Board() {
         board = new char[9];
 
-        for (int i = 0; i < 10 ; i++) {
+        for (int i = 0; i < 9 ; i++) {
             board[i] = 0;
         }
         newTurn = new Turn();
