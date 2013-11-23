@@ -1,5 +1,5 @@
 
   git add .
   git commit -m "Succesful build from Rabison Travis"
-  git remote set-url origin git@github.com:qts/lateterm.git
+  git remote set-url origin https://github.com/qts/lateterm.git
   git push origin HEAD:deploy
