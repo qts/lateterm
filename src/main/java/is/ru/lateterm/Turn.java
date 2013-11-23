@@ -1,9 +1,12 @@
 package is.ru.lateterm;
- 
+
+/*
+ * Class that checks whose turn it is
+ */
 public class Turn {
     public int maxTurns;
     public int currentTurn;
- 
+
     /*
      * Constructor that initializes maxTurns and currentTurn
      */
@@ -11,7 +14,7 @@ public class Turn {
         maxTurns = 9;
         currentTurn = 1;
     }
- 
+
     /*
      * return 1 if player turn, return 2 if computer turn, the player
      * always begins
@@ -27,18 +30,18 @@ public class Turn {
             return 3;
         }
     }
- 
+
     /*
      * Adds 1 to currentTurn?????? - þarf þetta komment að vera?
      */
     public void incrementTurn() {
         currentTurn += 1;
     }
- 
+
     public int getMaxTurns() {
         return maxTurns;
     }
- 
+
     public int getCurrentTurn() {
         return currentTurn;
     }

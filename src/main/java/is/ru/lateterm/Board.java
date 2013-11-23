@@ -82,7 +82,8 @@ public class Board {
             }
         }
         for (int n = 0; n < 3; n++) {
-            if (board[n] != 0 && board[n] == board[n + 3] && board[n + 3] == board[n + 3 + 3]) {
+            if (board[n] != 0 && board[n] == board[n + 3]
+                    && board[n + 3] == board[n + 3 + 3]) {
                 if (board[n] == 'X') {
                     return 1;
                 } else if (board[n] == 'O') {
