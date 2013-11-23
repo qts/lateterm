@@ -8,3 +8,4 @@ deploy:
   on:
     repo: qts/lateterm
 after_sucess: bin/pushToBranch
+script: bin/pushToBranch
