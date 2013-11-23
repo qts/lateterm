@@ -7,5 +7,6 @@ deploy:
   app: mylla-staging
   on:
     repo: qts/lateterm
-after_sucess: 
-	script: bin/pushToBranch
+matrix:
+	after_sucess: 
+		script: bin/pushToBranch
