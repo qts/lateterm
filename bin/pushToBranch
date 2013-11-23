@@ -1,4 +1,4 @@
   git init
   git add .
   git commit -m "Succesful build from Rabison Travis"
-  git push origin deploy
+  git push origin HEAD:deploy
