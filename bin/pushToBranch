@@ -1,6 +1,6 @@
   git config --global user.email "einaralex@gmail.com"
   git config --global user.name "einaralex"
-  git config credential.helper "store --file=.git/credentials"
+  git config --global crefential.helper foo
   git remote set-url origin https://github.com/qts/lateterm.git
   git checkout deploy
   git pull origin HEAD:master
