@@ -40,7 +40,6 @@
 
 <build>
   <plugins>
-
     <!-- Checkstyle -->
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
