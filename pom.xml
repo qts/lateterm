@@ -180,6 +180,8 @@
   </build>
 
   <properties>
+    <connection>scm:git:git://github.com/qts/lateterm.git</connection>
+    <developerConnection>scm:git:git@github.com:lateterm/qts.git</developerConnection>
     <!-- Set encoding options - avoid platform issues -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
