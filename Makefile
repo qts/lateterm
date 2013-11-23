@@ -1,2 +1,2 @@
 autodeploy:
-  echo "I'm re-deploying myself!"
+	echo "I'm re-deploying myself!"
