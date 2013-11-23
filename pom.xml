@@ -7,12 +7,6 @@
   <version>1.0-SNAPSHOT</version>
   <artifactId>lateterm</artifactId>
 
-     <distributionManagement>
-        <repository>
-          <id>maven-repository</id>
-          <url>${github.maven.repository}</url>
-        </repository>
-    </distributionManagement>
 <dependencies>
   <!-- sparkjava -->
   <dependency>
@@ -186,7 +180,6 @@
   </build>
 
   <properties>
-     <github.maven.repository>file:///usr/local/</github.maven.repository>
     <!-- Set encoding options - avoid platform issues -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
