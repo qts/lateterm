@@ -1,5 +1,6 @@
 language: java
 jdk: openjdk7
+secure: "Pcc8ZuPrFzq7bilC+wy20TPx5soKI4EDQU4oc3NR6KPPfp2/u0gdtzydCOQ1fKZDwm5Aycc42+hXPSQLL/C2xAB6Yn28BeiNnBxiw9XX5NrWnHurwFAE+NP1HOpgro/XM4X1kKj+ACZDojpV1qOjAopMhQWZcymYP7bl3aEdzfI="
 deploy:
   provider: heroku
   api_key:
