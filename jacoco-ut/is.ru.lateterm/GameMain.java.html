@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GameMain.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">lateterm</a> &gt; <a href="index.html" class="el_package">is.ru.lateterm</a> &gt; <span class="el_source">GameMain.java</span></div><h1>GameMain.java</h1><pre class="source lang-java linenums">package is.ru.lateterm;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import java.lang.System.*;
+
+import static spark.Spark.*;
+import spark.*;
+
+<span class="nc" id="L10">public class GameMain {</span>
+    public static void main(String [] args) {
+        char ans;
+        /*
+         * do-while loop that continues until the player does not want
+         * to play anymore
+         */
+        do {
+<span class="nc" id="L18">            boolean rightInput = false;</span>
+<span class="nc" id="L19">            Turn turn = new Turn();</span>
+<span class="nc" id="L20">            Board board = new Board();</span>
+<span class="nc" id="L21">            MakeMove makeMove = new MakeMove();</span>
+<span class="nc" id="L22">            board.greet();</span>
+
+            /*
+             * Continues while the game is not finished
+<span class="nc" id="L26">             */</span>
+<span class="nc bnc" id="L27" title="All 2 branches missed.">            while (turn.getCurrentTurn() &lt;= turn.getMaxTurns()) {</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">                if (turn.whoseTurn() == 1) {</span>
+<span class="nc" id="L29">                    rightInput = false;</span>
+
+                    /*
+                     * When the player chooses a wrong input
+                     */
+<span class="nc bnc" id="L34" title="All 2 branches missed.">                    while (!rightInput) {</span>
+<span class="nc" id="L35">                        System.out.println(&quot;Please choose a block&quot;);</span>
+<span class="nc" id="L36">                        Scanner input;</span>
+<span class="nc" id="L37">                        int hPlacement = 0;</span>
+<span class="nc" id="L38">                        try {</span>
+<span class="nc" id="L39">                            input = new Scanner(System.in);</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">                            if (input.hasNextInt()) {</span>
+<span class="nc" id="L41">                                hPlacement = input.nextInt();</span>
+<span class="nc" id="L42">                            } else {</span>
+<span class="nc" id="L43">                                hPlacement = 0;</span>
+<span class="nc" id="L44">                            }</span>
+<span class="nc" id="L45">                        } catch (InputMismatchException exc) {</span>
+<span class="nc" id="L46">                            System.out.println(&quot;Not a number, try again.&quot;);</span>
+<span class="nc" id="L47">                            rightInput = false;</span>
+<span class="nc" id="L48">                            break;</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">                        }</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">                        if (makeMove.outOfRange(hPlacement)) {</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">                            rightInput = false;</span>
+<span class="nc" id="L52">                            System.out.println(&quot;Not a valid number, try again.&quot;);</span>
+<span class="nc" id="L53">                            break;</span>
+                        }
+<span class="nc bnc" id="L55" title="All 4 branches missed.">                        if (board.isSpaceTaken(hPlacement)) {</span>
+<span class="nc" id="L56">                            rightInput = false;</span>
+<span class="nc" id="L57">                            System.out.println(&quot;Space take, try again.&quot;);</span>
+                        } else {
+<span class="nc" id="L59">                            board.updateBoard(hPlacement, 'X');</span>
+<span class="nc" id="L60">                            turn.incrementTurn();</span>
+<span class="nc" id="L61">                            rightInput = true;</span>
+                        }
+<span class="nc" id="L63">                    }</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">                } else if (turn.whoseTurn() == 2) {</span>
+<span class="nc" id="L65">                    rightInput = false;</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed."></span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">                    while (!rightInput) {</span>
+<span class="nc" id="L68">                        int cPlacement = makeMove.computerPlays();</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">                        if (!board.isSpaceTaken(cPlacement)) {</span>
+<span class="nc" id="L70">                            board.updateBoard(cPlacement, 'O');</span>
+<span class="nc" id="L71">                            turn.incrementTurn();</span>
+<span class="nc" id="L72">                            rightInput = true;</span>
+                        }
+<span class="nc bnc" id="L74" title="All 2 branches missed.">                    }</span>
+                }
+<span class="nc bnc" id="L76" title="All 2 branches missed.">                if (board.isWinner() == 1) {</span>
+<span class="nc" id="L77">                    System.out.println(&quot;Congratulations! You won!&quot;);</span>
+<span class="nc" id="L78">                    break;</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">                } else if (board.isWinner() == 2) {</span>
+<span class="nc" id="L80">                    System.out.println(&quot;The computer is the winner, better luck next time.&quot;);</span>
+<span class="nc" id="L81">                    break;</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">                } else if (turn.getCurrentTurn() == turn.getMaxTurns() + 1) {</span>
+<span class="nc" id="L83">                    System.out.println(&quot;A tie!&quot;);</span>
+<span class="nc" id="L84">                    break;</span>
+                }
+            }
+<span class="nc" id="L87">            System.out.println(&quot;Play again? Y/N&quot;);</span>
+<span class="nc" id="L88">            Scanner reader = new Scanner(System.in);</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">            ans = reader.next().charAt(0);</span>
+<span class="nc bnc" id="L90" title="All 4 branches missed.">        } while(ans == 'Y' || ans == 'y');</span>
+<span class="nc" id="L91">        System.out.println(&quot;Game over!&quot;);</span>
+<span class="nc" id="L92">    }</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">}</span>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.3.201306030806</span></div></body></html>
