@@ -6,6 +6,8 @@
  --------|----------|--------
 ##Develoment manual
 [Here](https://docs.google.com/document/d/1FEEWC_kMnodoRFodRHs-IKTz36Z2fZ9f17KShGKRVNk/pub)
+##Administration manual
+[Here](https://docs.google.com/document/d/1dN9sG77lAbceA0r-y-Sx97SAmTfWxyPOZRYLnBTsyk0/pub)
 ##Design Report
 [Here](https://docs.google.com/document/d/1DBcTju1IhY3ZHEVTcC582R5j8JKBYTzZ0sussjuftAQ/pub)
 
