@@ -1,7 +1,6 @@
 language: java
 jdk: openjdk7
-before_install: 
-	- TRAVIS_REPO_SLUG=qts/lateterm GITHUB_NAME=einaralex GITHUB_EMAIL=einaralex@gmail.com ./travis/bundle_install_from_persisted_dir
+before_install: TRAVIS_REPO_SLUG=qts/lateterm GITHUB_NAME=einaralex GITHUB_EMAIL=einaralex@gmail.com ./travis/bundle_install_from_persisted_dir
 deploy:
   provider: heroku
   api_key:
@@ -10,7 +9,7 @@ deploy:
   on:
     repo: qts/lateterm
 #script: bin/pushToBranch
-source_key: ec:31:9f:27:f1:cd:39:65:e1:52:db:f2:41:b7:c6:d9
+source_key: ZWM6MzE6OWY6Mjc6ZjE6Y2Q6Mzk6NjU6ZTE6NTI6ZGI6ZjI6NDE6Yjc6YzY6ZDk=
 env:
   global:
     secure: ifoTlGATG98il4vRnyupI9qtK8Yr8aqK2d3d7zBmxhCj7yU5OwEV53AJfyKZrhBM/nj4Oo9TbuGPmln7OyhuD3JnL9/UuA3RMK2itav2x1nR05eVVGvKAz10kvK65nXPQlO+GMHwkT9QtnAbO0ZxKBIQEkEi6MzKrdkd+4YCtzY=
