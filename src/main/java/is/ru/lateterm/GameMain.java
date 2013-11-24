@@ -1,5 +1,5 @@
 package is.ru.lateterm;
-
+//
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.lang.System.*;
@@ -9,15 +9,16 @@ import spark.*;
 
 public class GameMain {
     public static void main(String [] args) {
-        staticFileLocation("/public");
-        setPort(Integer.valueOf(System.getenv("PORT")));
-
-        get(new Route("/hello") {
-        @Override
-        public Object handle(Request request, Response response) {
-            return "Hello World!";
-            }
-        });
+        /* staticFileLocation("/public");
+         *  setPort(Integer.valueOf(System.getenv("PORT")));
+         *
+         * get(new Route("/hello") {
+         * @Override
+         *  public Object handle(Request request, Response response) {
+         *    return "Hello World!";
+         *    }
+        *  });
+        */
         char ans;
         /*
          * do-while loop that continues until the player does not want
