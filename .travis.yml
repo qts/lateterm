@@ -9,7 +9,7 @@ deploy:
   on:
     repo: qts/lateterm
 #script: bin/pushToBranch
-source_key: "ec:31:9f:27:f1:cd:39:65:e1:52:db:f2:41:b7:c6:d9"
+source_key: ec:31:9f:27:f1:cd:39:65:e1:52:db:f2:41:b7:c6:d9
 env:
   global:
     secure: ifoTlGATG98il4vRnyupI9qtK8Yr8aqK2d3d7zBmxhCj7yU5OwEV53AJfyKZrhBM/nj4Oo9TbuGPmln7OyhuD3JnL9/UuA3RMK2itav2x1nR05eVVGvKAz10kvK65nXPQlO+GMHwkT9QtnAbO0ZxKBIQEkEi6MzKrdkd+4YCtzY=
