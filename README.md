@@ -8,16 +8,7 @@
 [Here](https://docs.google.com/document/d/1FEEWC_kMnodoRFodRHs-IKTz36Z2fZ9f17KShGKRVNk/pub)
 ##Design Report
 [Here](https://docs.google.com/document/d/1DBcTju1IhY3ZHEVTcC582R5j8JKBYTzZ0sussjuftAQ/pub)
-##Administration manual                       
 
-##Automatic continuous integration
-
-
-The following is a list of notes regarding the examples in this directory.
-
-## General Requirements
-
-...
 
 
 
