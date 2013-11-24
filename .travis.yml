@@ -3,7 +3,6 @@ jdk: openjdk7
 after_success:
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-- TRAVIS_REPO_SLUG=qts/lateterm GITHUB_NAME=einaralex GITHUB_EMAIL=einaralex@gmail.com ./travis/bundle_install_from_persisted_dir
 deploy:
   provider: heroku
   api_key:
