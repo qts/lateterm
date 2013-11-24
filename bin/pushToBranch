@@ -1,5 +1,7 @@
   #git merge -s ours deploy -m "Travis"
-  git checkout origin/deploy
+  git fetch origin
+  git checkout -b deploy origin/deploy
+  git checkout deploy
   git merge --ff-only master
   git remote set-url origin https://github.com/qts/lateterm.git
   git push
