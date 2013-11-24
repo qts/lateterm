@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Turn.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">lateterm</a> &gt; <a href="index.html" class="el_package">is.ru.lateterm</a> &gt; <span class="el_source">Turn.java</span></div><h1>Turn.java</h1><pre class="source lang-java linenums">package is.ru.lateterm;
+
+/*
+ * Class that checks whose turn it is
+ */
+public class Turn {
+    public int maxTurns;
+    public int currentTurn;
+
+    /*
+     * Constructor that initializes maxTurns and currentTurn
+     */
+<span class="fc" id="L13">    public Turn() {</span>
+<span class="fc" id="L14">        maxTurns = 9;</span>
+<span class="fc" id="L15">        currentTurn = 1;</span>
+<span class="fc" id="L16">    }</span>
+
+    /*
+     * return 1 if player turn, return 2 if computer turn, the player
+     * always begins
+     */
+    public int whoseTurn() {
+<span class="pc bpc" id="L23" title="1 of 4 branches missed.">        if (currentTurn &gt;= 1 &amp;&amp; currentTurn &lt;= 9) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">                if (currentTurn % 2 == 1) {</span>
+<span class="fc" id="L25">                        return 1;</span>
+                } else {
+<span class="fc" id="L27">                        return 2;</span>
+                }
+        } else {
+<span class="fc" id="L30">            return 3;</span>
+        }
+    }
+
+    /*
+     * Adds 1 to currentTurn?????? - þarf þetta komment að vera?
+     */
+    public void incrementTurn() {
+<span class="fc" id="L38">        currentTurn += 1;</span>
+<span class="fc" id="L39">    }</span>
+
+    public int getMaxTurns() {
+<span class="fc" id="L42">        return maxTurns;</span>
+    }
+
+    public int getCurrentTurn() {
+<span class="fc" id="L46">        return currentTurn;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.3.201306030806</span></div></body></html>

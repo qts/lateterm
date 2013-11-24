@@ -9,6 +9,7 @@ import spark.*;
 
 public class GameMain {
     public static void main(String [] args) {
+        staticFileLocation("/public");
         char ans;
         /*
          * do-while loop that continues until the player does not want
