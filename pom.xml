@@ -123,7 +123,7 @@
                 <!-- Sets the path to the file which contains the execution data. -->
                 <dataFile>${project.build.directory}/coverage-reports/jacoco-ut.exec</dataFile>
                 <!-- Sets the output directory for the code coverage report. -->
-                <outputDirectory>${project.basedir}/jacoco-ut</outputDirectory>
+                <outputDirectory>${project.basedir}/target/jacoco-ut</outputDirectory>
             </configuration>
         </execution>
       </executions>

@@ -1,5 +1,4 @@
-target/*
-!target/lateterm-1.0-SNAPSHOT.jar
+target/
 .DS_Store
 
 
