@@ -1,4 +1,5 @@
   git remote set-url origin https://github.com/qts/lateterm.git
   git checkout deploy
-  git pull origin HEAD:master
+  git merge master
+  git commit -m "rabison"
   git push
