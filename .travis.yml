@@ -1,12 +1,9 @@
 language: java
 jdk: openjdk7
-before_script:
-  - git config --global user.email "einaralex@gmail.com"
-  - git config --global user.name "einaralex"
-after_script:
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials"
-#before_install: TRAVIS_REPO_SLUG=qts/lateterm GITHUB_NAME=einaralex GITHUB_EMAIL=einaralex@gmail.com ./travis/bundle_install_from_persisted_dir
+after_success:
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials"
+- bin/pushToBranch
 deploy:
   provider: heroku
   api_key:
@@ -14,8 +11,7 @@ deploy:
   app: mylla-staging
   on:
     repo: qts/lateterm
-#script: bin/pushToBranch
 source_key: ZWM6MzE6OWY6Mjc6ZjE6Y2Q6Mzk6NjU6ZTE6NTI6ZGI6ZjI6NDE6Yjc6YzY6ZDk=
 env:
   global:
-    secure: ifoTlGATG98il4vRnyupI9qtK8Yr8aqK2d3d7zBmxhCj7yU5OwEV53AJfyKZrhBM/nj4Oo9TbuGPmln7OyhuD3JnL9/UuA3RMK2itav2x1nR05eVVGvKAz10kvK65nXPQlO+GMHwkT9QtnAbO0ZxKBIQEkEi6MzKrdkd+4YCtzY=
+  - secure: 41SbhGdvTqvUq+vzRvZjFEPggET+5CIQR+dVWzL7l1qrjQRGKKh8wXQNS/lO8PuriwdxWCnSFfUriXn4EDoIKaawpP28oz+ZsZxtlvcFTiFPIjuFCsuY1ZbkR5xzrmB68HWANqAwZWymoTOI4+26FDLL0UjuOZ7qjvZn5Tc4KE0=

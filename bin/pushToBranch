@@ -2,8 +2,3 @@
   git checkout deploy
   git pull origin HEAD:master
   git push
-  #git add .
-  #git commit -m "Succesful build from Rabison Travis"
-
-  #git push origin HEAD:deploy
-  #wat
