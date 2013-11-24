@@ -1,6 +1,12 @@
 language: java
 jdk: openjdk7
-before_install: TRAVIS_REPO_SLUG=qts/lateterm GITHUB_NAME=einaralex GITHUB_EMAIL=einaralex@gmail.com ./travis/bundle_install_from_persisted_dir
+before_script:
+  - git config --global user.email "einaralex@gmail.com"
+  - git config --global user.name "einaralex"
+after_script:
+  - git config credential.helper "store --file=.git/credentials"
+  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials"
+#before_install: TRAVIS_REPO_SLUG=qts/lateterm GITHUB_NAME=einaralex GITHUB_EMAIL=einaralex@gmail.com ./travis/bundle_install_from_persisted_dir
 deploy:
   provider: heroku
   api_key:
