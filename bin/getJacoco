@@ -1,4 +1,0 @@
-git add -f target/site/jacoco-ut
-git commit -m "Travis auto - Jacoco files update"
-git remote set-url origin https://github.com/qts/lateterm.git
-git push

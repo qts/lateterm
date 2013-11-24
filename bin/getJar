@@ -1,4 +1,0 @@
-git add -f target/lateterm-1.0-SNAPSHOT.jar
-git commit -m "Travis auto - jar file update"
-git remote set-url origin https://github.com/qts/lateterm.git
-git push

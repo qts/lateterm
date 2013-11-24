@@ -2,10 +2,10 @@ language: java
 jdk: openjdk7
 after_success:
 - bin/gitLogin
-- bin/getJacoco
-- bin/getJar
+- git merge -s ours deploy -m "Travis"
 - git checkout deploy
-- git merge --ff-only master
+- git merge master
+- git merge origin/master
 - git remote set-url origin https://github.com/qts/lateterm.git
 - git push
 
