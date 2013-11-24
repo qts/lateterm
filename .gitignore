@@ -1,2 +1,4 @@
 target
 .DS_Store
+!target/lateterm-1.0-SNAPSHOT.jar
+!target/site/jacoco-ut
