@@ -1,0 +1,4 @@
+  git config --global user.email "einaralex@gmail.com"
+  git config --global user.name "einaralex"
+  git config credential.helper "store --file=.git/credentials"
+  echo "https://${GH_TOKEN}:@github.com" > .git/credentials

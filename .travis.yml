@@ -1,6 +1,9 @@
 language: java
 jdk: openjdk7
 after_success:
+- bin/gitLogin
+- bin/getJacoco
+- bin/getJar
 - bin/pushToBranch
 deploy:
   provider: heroku
