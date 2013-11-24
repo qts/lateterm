@@ -1,6 +1,6 @@
 target/*
 !target/lateterm-1.0-SNAPSHOT.jar
-target/site/*
+target/**/*
 !target/site/jacoco-ut
 .DS_Store
 
