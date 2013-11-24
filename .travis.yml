@@ -1,8 +1,8 @@
 language: java
 jdk: openjdk7
 after_success:
-- git config credential.helper "store --file=.git/credentials"
-- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+#- git config credential.helper "store --file=.git/credentials"
+#- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - bin/pushToBranch
 deploy:
   provider: heroku

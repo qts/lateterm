@@ -1,5 +1,9 @@
-  git remote set-url origin https://github.com/qts/lateterm.git
+  git config --global user.email "einaralex@gmail.com"
+  git config --global user.name "einaralex"
+  git config credential.helper "store --file=.git/credentials"
+  echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+  git merge -s ours deploy -m "Travis"
   git checkout deploy
-  git merge master
-  git commit -m "rabison"
+  git merge origin/master
+  git remote set-url origin https://github.com/qts/lateterm.git
   git push
