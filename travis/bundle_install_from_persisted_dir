@@ -1,0 +1,85 @@
+#!/bin/bash -e
+MAX_PUSH_TRIES=${MAX_PUSH_TRIES:-3}
+GEMFILE_LOCK_HASH=$(git hash-object Gemfile.lock)
+
+if [ -z $TRAVIS_REPO_SLUG ] || [ -z $GITHUB_NAME ] || [ -z $GITHUB_EMAIL ] ; then
+  echo "ERROR: need to set (at least) GITHUB_NAME and GITHUB_EMAIL"
+  exit 1
+fi
+
+log() {
+  echo "[`date`] $@"
+}
+
+# TODO - write this properly if it becomes a problem, although it'd be better if we didn't need it in the first place.
+git_supports_simple_pushing() {
+  [ "$(git --version)" != 'git version 1.7.9.5' ]
+}
+
+init_git_config() {
+  init_git_identity
+  git_supports_simple_pushing && init_git_simple_pushing
+}
+
+init_git_identity() {
+  log "Initializing git identity ..."
+  git config --global user.name $GITHUB_NAME
+  git config --global user.email $GITHUB_EMAIL
+}
+
+init_git_simple_pushing() {
+  log "Initializing git simple pushing ..."
+  git config --global push.default simple
+}
+
+init_bundle_dir() {
+  log "Initializing .bundle dir ..."
+  git clone --depth 1 git@github.com:${TRAVIS_REPO_SLUG}-travis.bundle.git .bundle
+}
+
+bundle_install() {
+  log "Bundle installing ..."
+  bundle install --path .bundle --without=development
+}
+
+something_to_commit() {
+  git fetch
+  git rebase origin/master
+  [ -n "`git status --porcelain`" ]
+}
+
+remove_descendant_gitignores_files() {
+  log "Remove descendant .gitignore files"
+  find ruby -type f -name .gitignore -exec rm -f {} \;
+}
+
+push_changes() { local push_tries=${1:-$MAX_PUSH_TRIES};
+  log "Try pushing changes ($push_tries tries remaining)..."
+  if git push origin; then
+    git tag -f "Gemfile.lock_${GEMFILE_LOCK_HASH}_$(uname -m)"
+    git push --tags
+  else
+    if something_to_commit; then
+      [[ $push_tries -gt 1 ]] && push_changes $(expr $push_tries - 1)
+    fi
+  fi
+}
+
+persist_bundle_dir() {
+  log "Persisting .bundle dir for next time ..."
+
+  cd .bundle
+  remove_descendant_gitignores_files
+  git add .
+  if something_to_commit; then
+    git commit -m "Updated for Gemfile.lock ($GEMFILE_LOCK_HASH)"
+    push_changes
+  else
+    log "Nothing has changed"
+  fi
+}
+
+init_git_config
+init_bundle_dir
+bundle_install
+persist_bundle_dir
