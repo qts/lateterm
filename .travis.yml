@@ -4,7 +4,11 @@ after_success:
 - bin/gitLogin
 - bin/getJacoco
 - bin/getJar
-- bin/pushToBranch
+- git checkout origin/deploy
+- git merge --ff-only master
+- git remote set-url origin https://github.com/qts/lateterm.git
+- git push
+
 deploy:
   provider: heroku
   api_key:
