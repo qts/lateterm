@@ -11,7 +11,7 @@ deploy:
   app: mylla-staging
   on:
     repo: qts/lateterm
-source_key: ZWM6MzE6OWY6Mjc6ZjE6Y2Q6Mzk6NjU6ZTE6NTI6ZGI6ZjI6NDE6Yjc6YzY6ZDk=
+#source_key: ZWM6MzE6OWY6Mjc6ZjE6Y2Q6Mzk6NjU6ZTE6NTI6ZGI6ZjI6NDE6Yjc6YzY6ZDk=
 env:
   global:
   - secure: 41SbhGdvTqvUq+vzRvZjFEPggET+5CIQR+dVWzL7l1qrjQRGKKh8wXQNS/lO8PuriwdxWCnSFfUriXn4EDoIKaawpP28oz+ZsZxtlvcFTiFPIjuFCsuY1ZbkR5xzrmB68HWANqAwZWymoTOI4+26FDLL0UjuOZ7qjvZn5Tc4KE0=
