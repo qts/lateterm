@@ -1,7 +1,7 @@
 # Lateterm 
 
- [Heroku app](http://mylla-staging.herokuapp.com/)   |  [Travis CI](https://travis-ci.org/qts/lateterm)   |   [JaCoCo Code Coverage (Raw)](http://htmlpreview.github.io/?https://github.com/qts/lateterm/blob/master/jacoco-ut/index.html) 
- --------|----------|--------
+[Travis CI](https://travis-ci.org/qts/lateterm)   |    [Deployment Server](http://46.149.26.47/)    |    [JaCoCo Code Coverage](http://46.149.26.47/target/jacoco-ut/index.html)    |    [Code Inspection Report](http://46.149.26.47/target/site/checkstyle.html) 
+ --------|----------|--------|--------
 ##Develoment manual
 [Here](https://docs.google.com/document/d/1FEEWC_kMnodoRFodRHs-IKTz36Z2fZ9f17KShGKRVNk/pub)
 ##Design Report
