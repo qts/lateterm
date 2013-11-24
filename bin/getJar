@@ -1,5 +1,3 @@
-cd target
-git init
-git add lateterm-1.0-SNAPSHOT.jar
+git add -f target/lateterm-1.0-SNAPSHOT.jar
 git commit -m "Travis auto - jar file update"
 git push

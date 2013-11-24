@@ -1,4 +1,3 @@
-cd target/site
-git init
-git add jacoco-ut
+git add -f target/site/jacoco-ut
 git commit -m "Travis auto - Jacoco files update"
+git push
