@@ -21,7 +21,7 @@ public class Board {
      * Prints out a greeting
      */
     public void greet() {
-        System.out.println("A game of TicTacToe");
+        System.out.println("Hallo smallo");
         System.out.println(" 1 | 2 | 3 ");
         System.out.println(" 4 | 5 | 6 ");
         System.out.println(" 7 | 8 | 9 ");
